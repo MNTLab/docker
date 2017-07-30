@@ -1,0 +1,24 @@
+version: '2'
+services:
+ hello-world:
+    build:
+      context: .
+      dockerfile: application.Dockerfile
+    command: sleep infinity
+ tomcat:
+    build:
+      context: .
+      dockerfile: tomcat.Dockerfile
+    command: /usr/libexec/tomcat/server start -DFOREGROUND
+    depends_on: [ "hello-world" ]
+    volumes_from: [ "hello-world"]
+    expose: [ "8080" ]
+    ports: [ "8080:8080" ]
+ nginx:
+    build:
+      context: .
+      dockerfile: web.Dockerfile
+    command: ["nginx", "-g", "daemon off;"]
+    depends_on: [ "tomcat" ]
+    expose: ["80"]
+    ports: [ "80:80" ]
