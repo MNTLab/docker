@@ -83,3 +83,4 @@ $ docker-compose stop
 <img src="resources/05.PNG">
 <img src="resources/06.PNG">
 <img src="resources/07.PNG">
+<img src="resources/08.PNG">
