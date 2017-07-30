@@ -42,6 +42,8 @@ Task Report Notes
     <img src="resources/pictures/Screen Shot 2017-07-30 at 21.17.26.png">
     
     2. With ```docker-compose```:
-    - Create ```docker-compose.yml``` file to build containers from previos task
+    - Create [```docker-compose.yml```](https://github.com/PaulYurchuk/docker/blob/pavel_yurchuk/docker-1/docker-compose.yml) file to build containers from previos task
     - Run "environment" in daemon mode
+    <img src="resources/pictures/Screen Shot 2017-07-31 at 00.01.51.png">
+    
     
