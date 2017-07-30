@@ -15,7 +15,7 @@ Using base docker image ***sbeliakou/centos:7.2***
     - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
     - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
 2. With ```docker-compose```:
-    - Create ```docker-compose.yml``` file to build containers from previos task([docker-compose.yml](docker-compose.yml)
+    - Create ```docker-compose.yml``` file to build containers from previos task([docker-compose.yml](docker-compose.yml))
     - Run "environment" in daemon mode
 3. Create own branch (epam login without @epam.com, in lowercase)
 4. Create PR with description of reported task
@@ -24,13 +24,13 @@ Using base docker image ***sbeliakou/centos:7.2***
 Task Report Notes
 ---
 - Building images & running containers:
-<img src="resouces/Screenshot from 2017-07-31 01-05-11.png">
-<img src="resouces/Screenshot from 2017-07-31 01-06-56.png">
-<img src="resouces/Screenshot from 2017-07-31 01-09-01.png">
-<img src="resouces/Screenshot from 2017-07-31 01-11-54.png">
-<img src="resouces/Screenshot from 2017-07-31 01-17-19.png">
-<img src="resouces/Screenshot from 2017-07-31 01-32-49.png">
+<img src="resources/Screenshot from 2017-07-31 01-05-11.png">
+<img src="resources/Screenshot from 2017-07-31 01-06-56.png">
+<img src="resources/Screenshot from 2017-07-31 01-09-01.png">
+<img src="resources/Screenshot from 2017-07-31 01-11-54.png">
+<img src="resources/Screenshot from 2017-07-31 01-17-19.png">
+<img src="resources/Screenshot from 2017-07-31 01-32-49.png">
 
 -Using ```docker-compose```:
-<img src="resouces/Screenshot from 2017-07-31 01-41-57.png">
-<img src="resouces/Screenshot from 2017-07-31 01-44-16.png">
+<img src="resources/Screenshot from 2017-07-31 01-41-57.png">
+<img src="resources/Screenshot from 2017-07-31 01-44-16.png">
