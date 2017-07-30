@@ -10,7 +10,7 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 1. Wiht ```Dockerfiles```:
     - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
-    <img src="docker-1/resources/pics/1.jpg">
+    <img src="resources/pics/1.jpg">
     <img src="docker-1/resources/pics/2.jpg">
     
     - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))
