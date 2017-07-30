@@ -31,6 +31,6 @@ Task Report Notes
 <img src="resources/Screenshot from 2017-07-31 01-17-19.png">
 <img src="resources/Screenshot from 2017-07-31 01-32-49.png">
 
--Using ```docker-compose```:
+- Using ```docker-compose```:
 <img src="resources/Screenshot from 2017-07-31 01-41-57.png">
 <img src="resources/Screenshot from 2017-07-31 01-44-16.png">
