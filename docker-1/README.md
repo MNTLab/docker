@@ -1,7 +1,7 @@
 MTN.*NIX.11 Automated Environment Configuration Management
 ---
 
-***Student***: Put_Your_Name
+***Student***: Yury Shchanouski
 
 Home Task
 ---
@@ -23,4 +23,38 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 Task Report Notes
 ---
-*All stuff must be provided in this section
+1. Wiht ```Dockerfiles```:
+    - Create Docker Image of ```nginx``` ([web.Dockerfile](resources/nginx/web.Dockerfile))
+#### Build command:
+```
+$ docker build -t app -f resources/nginx/web.Dockerfile resources/nginx/.
+```
+    - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))
+#### Build command:
+```
+$ docker build -t app -f resources/tomcat/tomcat.Dockerfile resources/tomcat/.
+```
+    - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
+#### Build command:
+```
+$ docker build -t app -f resources/datavolume/application.Dockerfile resources/datavolume/.
+```
+    - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
+    - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
+#### Run commands:
+```
+# all commands should be run from docker-1 directory
+
+$ docker run -d --name datavolume app
+$ docker run -d --volumes-from datavolume --name tomcat tomcat
+$ docker run -d -p 127.0.0.1:80:80 --link tomcat:tomcat --name web web
+```
+#### Results:
+<img src="/resources/01.png">
+<img src="/resources/02.png">
+<img src="/resources/03.png">
+<img src="/resources/04.png">
+
+docker build -t app -f resources/datavolume/application.Dockerfile resources/datavolume/.
+
+
