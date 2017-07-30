@@ -1,0 +1,25 @@
+version: '2'
+services:
+ datavolume:
+    build:
+      context: .
+      dockerfile: application.Dockerfile
+    command: ["sleep", "infinity"]
+ tomcat:
+    build:
+      context: .
+      dockerfile: tomcat.Dockerfile
+    command: ["/opt/tomcat/bin/catalina.sh", "run"]
+    depends_on: [ "datavolume" ]
+    volumes_from: [ "datavolume" ]
+    expose: [ "8080" ]
+    ports: [ "8080:8080" ]
+ nginx:
+    build:
+      context: .
+      dockerfile: web.Dockerfile
+    command: ["nginx", "-g", "daemon off;"]
+    depends_on: [ "tomcat" ]
+    expose: [ "80" ]
+    ports: [ "80:80" ]
+
