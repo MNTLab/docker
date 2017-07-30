@@ -29,7 +29,8 @@ Task Report Notes
 
 #### Build command:
 
-``` 
+```
+# command should be run from docker-1 directory 
 $ docker build -t app -f resources/nginx/web.Dockerfile resources/nginx/. 
 ```
 
@@ -38,6 +39,7 @@ $ docker build -t app -f resources/nginx/web.Dockerfile resources/nginx/.
 #### Build command:
 
 ```
+# command should be run from docker-1 directory
 $ docker build -t app -f resources/tomcat/tomcat.Dockerfile resources/tomcat/. 
 ```
 
@@ -46,6 +48,7 @@ $ docker build -t app -f resources/tomcat/tomcat.Dockerfile resources/tomcat/.
 #### Build command:
 
 ```
+# command should be run from docker-1 directory
 $ docker build -t app -f resources/datavolume/application.Dockerfile resources/datavolume/.
 ```
 
@@ -55,7 +58,6 @@ $ docker build -t app -f resources/datavolume/application.Dockerfile resources/d
 #### Run commands:
 
 ```
-# all commands should be run from docker-1 directory
 $ docker run -d --name datavolume app
 $ docker run -d --volumes-from datavolume --name tomcat tomcat
 $ docker run -d -p 127.0.0.1:80:80 --link tomcat:tomcat --name web web
@@ -67,5 +69,17 @@ $ docker run -d -p 127.0.0.1:80:80 --link tomcat:tomcat --name web web
 <img src="resources/03.PNG">
 <img src="resources/04.PNG">
 
+2. With ```docker-compose```:
+   - Create ```docker-compose.yml``` file [docker-compose.yml](resources/docker-compose.yml) to build containers from previos task
+   - Run "environment" in daemon mode
+```
+# commands should be run from resources directory
+$ docker-compose up -d
+$ docker ps
+$ docker-compose stop
+```
 
-
+#### Results:
+<img src="resources/05.PNG">
+<img src="resources/06.PNG">
+<img src="resources/07.PNG">
