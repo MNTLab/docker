@@ -25,16 +25,19 @@ Task Report Notes
 ---
 1. Wiht ```Dockerfiles```:
     - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
+    web.Dockerfile:
     [a link](https://github.com/aion3181/docker/blob/henadzi_pashuto/docker-1/resources/nginx/web.Dockerfile)
     <img src="resources/pics/1.jpg">
     <img src="resources/pics/2.jpg">
     
     - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))
+    tomcat.Dockerfile:
     [a link](https://github.com/aion3181/docker/blob/henadzi_pashuto/docker-1/resources/tomcat/tomcat.Dockerfile)
     <img src="resources/pics/3.jpg">
     <img src="resources/pics/4.jpg">
     
     - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
+    application.Dockerfile:
     [a link](https://github.com/aion3181/docker/blob/henadzi_pashuto/docker-1/resources/data/application.Dockerfile)    
     <img src="resources/pics/5.jpg">
     
@@ -46,6 +49,7 @@ Task Report Notes
     
 2. With ```docker-compose```:
     - Create ```docker-compose.yml``` file to build containers from previos task
+    docker-compose.yml:
     [a link](https://github.com/aion3181/docker/blob/henadzi_pashuto/docker-1/docker-compose.yml)
     - Run "environment" in daemon mode
     <img src="resources/pics/8.jpg">
