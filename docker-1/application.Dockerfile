@@ -13,7 +13,7 @@ MAINTAINER Artem Aksenkin
 VOLUME /var/lib/tomcat/webapps/
 
 # Add app from volume to appserver
-ADD sample.war /var/lib/tomcat/webapps/
+ADD resources/sample.war /var/lib/tomcat/webapps/
 
 #CMD
 CMD sleep infinity
