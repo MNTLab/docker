@@ -7,7 +7,7 @@ node('Docker Host') {
   }
   stage('Building application') {
     docker.image('gradle').inside {
-      sh 'gradle build docker-2/resources/spring-boot/build.gradle'
+      sh 'gradle -b docker-2/resources/spring-boot/build.gradle build'
     }
   }
   stage ('Archiving artifact') {
