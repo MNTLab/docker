@@ -23,4 +23,4 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 Task Report Notes
 ---
-screens of workflow is in report.pdf
+screens of workflow is in ([report.pdf](/docker-1/report.pdf))
