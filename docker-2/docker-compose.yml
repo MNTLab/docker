@@ -9,3 +9,7 @@ services:
       - 8080:8080
     volumes:
       - ./FOR_JENKINS:/var/jenkins_home:rw
+  gradle:
+    build:
+      context: .
+      dockerfile: gradle.Dockerfile
