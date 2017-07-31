@@ -21,7 +21,9 @@ Using base docker image ***sbeliakou/centos:7.2***
 4. Create PR with description of reported task
 6. All needed resources (if they are) must be placed into ```/resources``` folder
 
-Task Report Notes
-([composefile](/docker-1/docker-compose.yml))
+Task Report Notes  
+## ([composefile](/docker-1/docker-compose.yml))
 ---
-*All stuff must be provided in this section
+<img pictures/docker-browser.png>
+
+<img pictures/docker-compose.png>
