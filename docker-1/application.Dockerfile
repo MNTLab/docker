@@ -3,7 +3,7 @@
 # Based on CentOS
 ############################################################
 
-# Set the base image to Ubuntu
+# Set the base image to centos
 FROM sbeliakou/centos:7.2
 
 # File Author / Maintaine
