@@ -1,7 +1,7 @@
 MTN.*NIX.11 Automated Environment Configuration Management
 ---
 
-***Student***: Put_Your_Name
+***Student***: Aliaksei_semirski
 
 Home Task
 ---
@@ -9,9 +9,9 @@ Home Task
 Using base docker image ***sbeliakou/centos:7.2***
 
 1. Wiht ```Dockerfiles```:
-    - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
-    - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))
-    - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
+    - Create Docker Image of ```nginx``` ([web.Dockerfile](/docker-1/web.Dockerfile))
+    - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/docker-1/tomcat.Dockerfile))
+    - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](/docker-1/application.Dockerfile))
     - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
     - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
 2. With ```docker-compose```:
@@ -23,4 +23,4 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 Task Report Notes
 ---
-*All stuff must be provided in this section
+screens of workflow is in ([report.pdf](/docker-1/report.pdf))
