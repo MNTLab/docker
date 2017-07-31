@@ -9,9 +9,16 @@ node('Docker Host') {
     step ([$class: 'CopyArtifact',
           projectName: "${job}",
           filter: "${art}"]);
-   sh "mv ../${art} ."
+    sh 'pwd'
+    sh "mv ${art} docker-2/"
   }
   stage ('Deploy application'){
     sh 'docker-compose -f docker-2/docker-compose.yml up -d'
+  }
+  stage ('Check application'){
+    sh 'sleep 5'
+    sh 'curl http://localhost:8081'
+    sh 'docker-compose -f docker-2/docker-compose.yml stop'
+    sh 'docker-compose -f docker-2/docker-compose.yml rm -f deploy'
   }
 }
