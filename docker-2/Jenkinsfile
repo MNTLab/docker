@@ -2,7 +2,7 @@ node('epbyminw3088.minsk.epam.com'){
 stage('Building') {
   sh 'rm -rf ./*'
   git branch: 'artsiom_aksionkin-2', url: 'https://github.com/artem-aksenkin/docker.git'
-  sh 'cp docker-2/initial/* ./'
+  sh 'cp docker-2/src/* ./'
 docker.image('jenkins/gradle:1.0').inside {
   sh 'gradle build'
 }
