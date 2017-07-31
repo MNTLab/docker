@@ -4,5 +4,5 @@ services:
     build:
       context: .
       dockerfile: app.Dockerfile
-    ports:
-- "8090:8080"
+    expose: [ "8080" ]
+    ports: [ "8090:8080" ]
