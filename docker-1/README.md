@@ -4,7 +4,8 @@ MTN.*NIX.11 Automated Environment Configuration Management
 ***Student***: Anton Maslakou
 
 
-# Watch screenshots in pdf file
+## Watch screenshots in https://github.com/anton-maslakou/docker/blob/docker1/docker-1/report-Docker1.pdf
+
 Home Task
 ---
 
