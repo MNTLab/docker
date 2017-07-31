@@ -1,0 +1,15 @@
+node('dockerhost'){
+stage('Building') {
+docker.image('day2_gradle').inside {
+  sh 'gradle build'
+}
+}
+stage('Deploying') {
+  sh 'docker-compose up -d'
+}
+stage('Check') {
+  sh 'sleep 5 && curl -IL http://127.0.0.1:8081'
+}
+}
+
+

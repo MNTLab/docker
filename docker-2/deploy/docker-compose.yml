@@ -1,0 +1,17 @@
+version: '2'
+services:
+ test:
+    build:
+      context: .
+      dockerfile: test.Dockerfile
+    ports: [ "127.0.0.1:8081:8080"]
+    volumes:
+      - /home/student/jenkins_node/workspace/Build/build/libs/:/build/libs/
+
+
+
+
+
+
+
+
