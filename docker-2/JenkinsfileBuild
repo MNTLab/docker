@@ -1,9 +1,9 @@
 node('Docker Host') {
-  stage ('Building Gradle Image'){
-    docker.build('gradle', '-f gradle.Dockerfile .')
-  }
   stage('Preparation (Checking out)') {
     git branch: "akonchyts_docker2", url: 'https://github.com/akonchyts/docker.git'
+  }
+  stage ('Building Gradle Image'){
+    docker.build('gradle', '-f gradle.Dockerfile .')
   }
   stage('Building application') {
     docker.image('gradle').inside {
