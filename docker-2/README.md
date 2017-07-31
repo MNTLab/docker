@@ -45,10 +45,18 @@ $ ansible-playbook playbook.yml
   Create custom ansible (v2.2.1) image
   Launch Jenkins from official [image](https://github.com/aion3181/docker/blob/henadzi_pashuto2/docker-2/docker-compose.yml)    
   Link Docker Host as Jenknis slave (ssh)
-  <img src="pics/1.jpg">
-  <img src="pics/2.jpg">
+  <img src="deploy/pics/1.jpg">
+  <img src="deploy/pics/2.jpg">
    
-  Create custom gradle image
+  Create custom gradle [image](https://github.com/aion3181/docker/blob/henadzi_pashuto2/docker-2/gradle.Dockerfile) 
   Configure a job to build spring-boot application using gradle image buit in 3
+  <img src="deploy/pics/3.jpg">
+  <img src="deploy/pics/4.jpg">  
   Configure a job to run just built Spring Boot app with docker-compose
+  [Jenkinsfile](https://github.com/aion3181/docker/blob/henadzi_pashuto2/docker-2/deploy/Jenkinsfile)
+  [docker-compose](https://github.com/aion3181/docker/blob/henadzi_pashuto2/docker-2/deploy/docker-compose.yml)
+  [test.Dockerfile](https://github.com/aion3181/docker/blob/henadzi_pashuto2/docker-2/deploy/test.Dockerfile)
+  <img src="deploy/pics/5.jpg">
+  <img src="deploy/pics/6.jpg">
+  <img src="deploy/pics/7.jpg">
 
