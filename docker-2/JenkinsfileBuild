@@ -1,0 +1,17 @@
+node('Docker Host') {
+  stage('Preparation (Checking out)') {
+    git branch: "akonchyts_docker2", url: 'https://github.com/akonchyts/docker.git'
+  }
+  stage ('Building Gradle Image'){
+    docker.build('gradle', '-f docker-2/gradle.Dockerfile .')
+  }
+  stage('Building application') {
+    docker.image('gradle').inside {
+      sh 'gradle -b docker-2/resources/spring-boot/build.gradle build'
+    }
+  }
+  stage ('Archiving artifact') {
+    sh 'cp docker-2/resources/spring-boot/build/libs/gs-spring-boot-0.1.0.jar .'
+    archive('gs-spring-boot-0.1.0.jar')
+  }
+}
