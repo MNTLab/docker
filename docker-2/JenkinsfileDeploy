@@ -1,0 +1,16 @@
+node('Docker Host') {
+  def job = 'Build_Spring-Boot_APP_Docker-Gradle-Image'
+  def art = 'gs-spring-boot-0.1.0.jar'
+  stage('Preparation (Checking out)') {
+    git branch: "akonchyts_docker2", url: 'https://github.com/akonchyts/docker.git'
+  }
+  stage('Triggering job and fetching artifact') {
+    build job: "${job}"
+    step ([$class: 'CopyArtifact',
+          projectName: "${job}",
+          filter: "${art}"]);
+  }
+  stage ('Deploy application'){
+    sh 'docker-compose up -d'
+  }
+}
