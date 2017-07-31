@@ -16,7 +16,7 @@ services:
     build:
       context: .
       dockerfile: nginx/web.Dockerfile
-    command: ["my-nginx", "-g", "daemon off;"]
+    command: ["nginx", "-g", "daemon off;"]
     depends_on: [ "my-tomcat" ]
     expose: [ "80" ]
     ports: [ "127.0.0.1:80:80" ]
