@@ -11,6 +11,6 @@ node('Docker Host') {
           filter: "${art}"]);
   }
   stage ('Deploy application'){
-    sh 'docker-compose up -d -f docker-2/docker-compose.yml'
+    sh 'docker-compose -f docker-2/docker-compose.yml up -d'
   }
 }
