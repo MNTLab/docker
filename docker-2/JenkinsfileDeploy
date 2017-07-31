@@ -9,7 +9,6 @@ node('Docker Host') {
     step ([$class: 'CopyArtifact',
           projectName: "${job}",
           filter: "${art}"]);
-    sh 'pwd'
     sh "mv ${art} docker-2/"
   }
   stage ('Deploy application'){
