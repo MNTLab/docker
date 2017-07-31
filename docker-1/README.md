@@ -24,6 +24,6 @@ Using base docker image ***sbeliakou/centos:7.2***
 Task Report Notes  
 ## ([composefile](/docker-1/docker-compose.yml))
 ---
-<img pictures/docker-browser.png>
+<img src="pictures/docker-browser.png">
 
-<img pictures/docker-compose.png>
+<img src="pictures/docker-compose.png">
