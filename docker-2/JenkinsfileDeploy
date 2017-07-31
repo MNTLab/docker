@@ -9,6 +9,7 @@ node('Docker Host') {
     step ([$class: 'CopyArtifact',
           projectName: "${job}",
           filter: "${art}"]);
+   sh 'mv ../${art} .'
   }
   stage ('Deploy application'){
     sh 'docker-compose -f docker-2/docker-compose.yml up -d'
