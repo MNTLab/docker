@@ -41,5 +41,5 @@ WORKDIR /home/student/PycharmProjects/docker/docker-2/jenkins_slave/docker-2
 
 RUN set -o errexit -o nounset \
 	&& echo "Testing Gradle installation" \
-	&& echo $JAVA_HOME
-&& gradle --version
+	&& echo $JAVA_HOME \
+    && gradle --version
