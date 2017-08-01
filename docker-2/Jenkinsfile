@@ -27,13 +27,13 @@ node('docker') {
              } finally {
               sh 'docker-compose stop jar && docker-compose rm -f jar'
              }
-             print ({$urlstatus})
+
 	        }
 
 	stage ('Sending status') {
 
          if ({$urlstatus} != 200){
-          print ('Unsuccess result')
+          print ('Unsuccess result'+'Response code= '+ '{$urlstatus})
          } else{
            print ('ALL STEPS SUCCESS')
          }
