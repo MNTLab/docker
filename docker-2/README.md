@@ -24,12 +24,13 @@ $ docker run -d --rm --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/data/
 $ docker build -t gradle -f resources/gradle/gradle.Dockerfile resources/gradle/.
 ```
 
-5. Configure a job to build [spring-boot application](https://spring.io/guides/gs/spring-boot/) using gradle image buit in 3
+5. Configure a job to build ([spring-boot application](https://spring.io/guides/gs/spring-boot/)) using gradle image buit in 3
 #### Results:
 <img src="resources/3.png">
 <img src="resources/4.png">
 <img src="resources/5.png">
-6. Configure a job to run just built Spring Boot app with docker-compose ([docker-compose.yml](resources/docker-compose.yml))
+6. Configure a job to run just built Spring Boot app with docker-compose 
+([docker-compose.yml](resources/docker-compose.yml))
 ([spring.Dockerfile](resources/spring/spring.Dockerfile))
 <img src="resources/6.png">
 
