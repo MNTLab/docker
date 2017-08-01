@@ -28,6 +28,7 @@ node('docker') {
              }
 	        }
 	stage ('Sending status') {
+	      sh 'echo $urlstatus'
          if ({$urlstatus} != 200){
           sh 'Unsuccess result'
          } else{
