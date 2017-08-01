@@ -1,0 +1,22 @@
+version: '2'
+services:
+ appcont:
+    build:
+      context: .
+      dockerfile: application.Dockerfile
+    command: sleep infinity
+ tomcatcont:
+    build:
+      context: .
+      dockerfile: tomcat.Dockerfile
+    command: /usr/libexec/tomcat/server start
+    depends_on: [ "appcont" ]
+    volumes_from: [ "appcont" ]
+ nginxcont:
+    build:
+      context: .
+      dockerfile: web.Dockerfile
+    command: nginx
+    depends_on: [ "tomcatcont" ]
+    expose: [ "80" ]
+    ports: [ "80:80" ]

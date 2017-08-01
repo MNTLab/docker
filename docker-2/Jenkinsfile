@@ -1,0 +1,24 @@
+node ('slave') {
+
+stage '\u2776 Preparation (Checking out)'
+	
+	git url: "https://github.com/spring-guides/gs-spring-boot.git", branch: 'master'
+	echo "\u2600 Repo downloaded"
+
+ 
+stage '\u2777 Building'
+	
+    sh '''cd complete
+    docker run --rm -v $(pwd):$(pwd) -w $(pwd) tsur_gradle gradle build &&\
+    cp build/libs/gs-spring-boot-0.1.0.jar ../
+    
+	'''
+     	echo "\u2600 Build completed"
+  
+stage '\u2778 Deployment application'
+	
+	git url: "https://github.com/SuperBazis/docker.git", branch: 'aleh_tsuranauD2'
+	echo "\u2600 Second repo downloaded"
+	sh 'docker-compose -f docker-2/app-docker-compose.yml up -d'
+
+} // node

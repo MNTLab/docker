@@ -1,0 +1,11 @@
+version: '2'
+services:
+  deploy:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    expose: [ "8080" ]
+    ports: [ "8090:8080" ]
+    volumes:
+      - /home/student/slavejenkins/workspace/test:/opt/app
+
