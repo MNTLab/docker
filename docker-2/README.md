@@ -29,9 +29,10 @@ $ docker build -t gradle -f resources/gradle/gradle.Dockerfile resources/gradle/
 <img src="resources/3.png">
 <img src="resources/4.png">
 <img src="resources/5.png">
+
 6. Configure a job to run just built Spring Boot app with docker-compose 
-[docker-compose.yml](resources/docker-compose.yml) and
-[spring.Dockerfile](resources/spring/spring.Dockerfile)
+([docker-compose.yml](resources/docker-compose.yml)) and
+([spring.Dockerfile](resources/spring/spring.Dockerfile))
 <img src="resources/6.png">
 
 
