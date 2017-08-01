@@ -13,7 +13,7 @@ node('docker') {
 	stage ('Deploy jar'){
 
 	        sh 'pwd'
-	        sh 'docker-compose -f docker-2/dokcer-compose.yml up -d'
+	        sh 'docker-compose up -d'
 
 	}
 	stage ('Test jar'){
