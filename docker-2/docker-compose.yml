@@ -9,8 +9,15 @@ services:
 #      - 8080:8080
 #    volumes:
 #      - ./FOR_JENKINS:/var/jenkins_home:rw
-
   gradle:
     build:
       context: .
       dockerfile: gradle.Dockerfile
+   spring:
+    build:
+      context: .
+      dockerfile: spring.Dockerfile
+      image: openjdk
+      container_name: spring
+
+
