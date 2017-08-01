@@ -1,10 +1,43 @@
 # Task:
-1. Create custom ansible (v2.2.1) image
+1. Create custom ansible (v2.2.1) image ([ansible.Dockerfile](resources/ansible/ansible.Dockerfile))
+#### Build command:
+
+```
+# command should be run from docker-2 directory 
+$ docker build -t ansible -f resources/ansible/ansible.Dockerfile resources/ansible/.
+```
 2. Launch Jenkins from [official image](https://hub.docker.com/_/jenkins/)
+([docker-compose.yml](resources/docker-compose.yml))
+``` 
+$ docker-compose up -d
+$ docker-compose stop
+$ docker-compose rm -f
+```
 3. Link Docker Host as Jenknis slave (ssh)
-4. Create custom gradle image
-5. Configure a job to build [spring-boot application](https://spring.io/guides/gs/spring-boot/) using gradle image buit in 3
-6. Configure a job to run just built Spring Boot app with docker-compose
+<img src="resources/1.png">
+<img src="resources/2.png">
+
+4. Create custom gradle image ([gradle.Dockerfile](resources/gradle/gradle.Dockerfile))
+#### Build command:
+
+```
+# command should be run from docker-2 directory 
+$ docker build -t gradle -f resources/gradle/gradle.Dockerfile resources/gradle/.
+```
+
+5. Configure a job to build ([spring-boot application](https://spring.io/guides/gs/spring-boot/)) using gradle image buit in 3
+#### Results:
+<img src="resources/3.png">
+<img src="resources/4.png">
+<img src="resources/5.png">
+
+6. Configure a job to run just built Spring Boot app with docker-compose 
+([docker-compose.yml](resources/spring/docker-compose.yml)) and
+([spring.Dockerfile](resources/spring/spring.Dockerfile))
+<img src="resources/6.png">
+
+
+#### Jenkinsfile script: ([Jenkinsfile](resources/Jenkinsfile))
 
 
 
