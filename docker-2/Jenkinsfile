@@ -1,6 +1,6 @@
 node('epbyminw3088.minsk.epam.com'){
 
-stage('Building') {
+stage('Git checkout') {
   sh 'rm -rf ./*'
   git branch: 'artsiom_aksionkin-2', url: 'https://github.com/artem-aksenkin/docker.git'
   sh 'cp -r docker-2/initial/ ./'
@@ -10,18 +10,18 @@ stage ('Building docker gradle image'){
 	  docker.build ('jenkins/gradle:1.0', '-f docker-2/gradle.Dockerfile .')
 }
 
-stage('build spring-boot app') {
+stage('Building spring-boot app') {
     docker.image('jenkins/gradle:1.0').inside {
       sh 'gradle -b initial/build.gradle build'
 }
 }
 
-stage('Deploying') {
+stage('Deploying app') {
    sh 'docker-compose up -d'
 }
 
 stage('Check') {
   sh 'sleep 8 && curl -IL http://127.0.0.1:8081'
-  sh 'docker-compose stop spring'
+  sh 'docker-compose down'
 }
 }
