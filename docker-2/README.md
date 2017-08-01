@@ -7,10 +7,11 @@
 $ docker build -t ansible -f resources/ansible/ansible.Dockerfile resources/ansible/.
 ```
 2. Launch Jenkins from [official image](https://hub.docker.com/_/jenkins/)
-
+([docker-compose.yml](resources/docker-compose.yml))
 ``` 
-$ docker pull jenkins/jenkins:lst 
-$ docker run -d --rm --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/data/jenkins:/var/jenkins_home jenkins
+$ docker-compose up -d
+$ docker-compose stop
+$ docker-compose rm -f
 ```
 3. Link Docker Host as Jenknis slave (ssh)
 <img src="resources/1.png">
@@ -31,7 +32,7 @@ $ docker build -t gradle -f resources/gradle/gradle.Dockerfile resources/gradle/
 <img src="resources/5.png">
 
 6. Configure a job to run just built Spring Boot app with docker-compose 
-([docker-compose.yml](resources/docker-compose.yml)) and
+([docker-compose.yml](resources/spring/docker-compose.yml)) and
 ([spring.Dockerfile](resources/spring/spring.Dockerfile))
 <img src="resources/6.png">
 
