@@ -26,12 +26,12 @@ $ docker build -t gradle -f resources/gradle/gradle.Dockerfile resources/gradle/
 
 5. Configure a job to build [spring-boot application](https://spring.io/guides/gs/spring-boot/) using gradle image buit in 3
 #### Results:
-<img src="resources/3.PNG">
-<img src="resources/4.PNG">
-<img src="resources/5.PNG">
+<img src="resources/3.png">
+<img src="resources/4.png">
+<img src="resources/5.png">
 6. Configure a job to run just built Spring Boot app with docker-compose ([docker-compose.yml](resources/docker-compose.yml))
 ([spring.Dockerfile](resources/spring/spring.Dockerfile))
-<img src="resources/6.PNG">
+<img src="resources/6.png">
 
 
 #### Jenkinsfile script: ([Jenkinsfile](resources/Jenkinsfile))
