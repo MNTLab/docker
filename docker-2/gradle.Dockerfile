@@ -36,8 +36,8 @@ RUN	echo "Installing dependencies" \
 
 # Create Gradle volume
 USER gradle
-VOLUME "/home/student/PycharmProjects/docker/docker-2/gradle/.gradle"
-WORKDIR /home/student/PycharmProjects/docker/docker-2/gradle
+VOLUME "/home/student/PycharmProjects/docker/docker-2/jenkins_slave"
+WORKDIR /home/student/PycharmProjects/docker/docker-2/jenkins_slave/docker-2
 
 RUN set -o errexit -o nounset \
 	&& echo "Testing Gradle installation" \
