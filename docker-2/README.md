@@ -61,6 +61,6 @@ Task Report Notes
 
 [jar.Dockerfile](jar.Dockerfile) - Docker container for deployment
 
-[gradle.Dockerfile](gradle.Dockerfile) - Docker container with Gradle for build
+[gradle.Dockerfile](gradle.Dockerfile) - Docker container Gradle 
 
-[docker-compose.yml](docker-compose.yml) - Docker container Jenkins
+[docker-compose.yml](docker-compose.yml) - Docker container Gradle for build
