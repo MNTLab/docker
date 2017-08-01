@@ -19,16 +19,12 @@ node('docker') {
 	            }
 
 	stage ('Check'){
-	   try {
-	         sh 'urlstatus=$(curl -o /dev/null --silent --head --write-out '%{http_code}' "http://127.0.0.1:8085")'
-             sh 'echo $urlstatus'
-	         } catch (error) {
 
-             } finally {
-              sh 'docker-compose stop jar && docker-compose rm -f jar'
+	         sh 'curl -o /dev/null --silent --head --write-out '%{http_code}' "http://127.0.0.1:8085"'
+             sh 'docker-compose stop jar && docker-compose rm -f jar'
              }
 
 	        }
 
-	    }
-    }
+ }
+
