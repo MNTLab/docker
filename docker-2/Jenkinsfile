@@ -5,7 +5,7 @@ node('docker') {
          }
 
  stage ('Building docker gradle image'){
-	def gradle = docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
+	  docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
             }
  dir('docker-2'){
     stage ('Building code'){
@@ -19,10 +19,10 @@ node('docker') {
 	        sh 'pwd'
 	        sh 'docker-compose up -d'
 	            }
-        }
+
 	stage ('Check'){
 	         sh 'sleep 8 && curl -IL http://127.0.0.1:8081'
              sh "docker-compose stop jar && docker-compose rm jar -f"
     	}
-	
+	}
 }
