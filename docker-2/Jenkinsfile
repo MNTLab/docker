@@ -20,7 +20,7 @@ node('docker') {
 
 	stage ('Check'){
 
-	         sh 'sleep 8 && curl -o /dev/null --silent --head --write-out '%{http_code}' http://127.0.0.1:8085'
+	         sh 'sleep 8 && curl http://127.0.0.1:8085'
              sh 'docker-compose stop jar && docker-compose rm -f jar'
              }
 
