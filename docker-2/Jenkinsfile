@@ -20,12 +20,12 @@ node('docker') {
 
 	stage ('Check'){
 	   try {
-	         sh 'sleep 8 && curl -IL http://127.0.0.1:8085'
+	         def result = sh 'sleep 8 && curl -IL http://127.0.0.1:8085 | grep 200'
 	         } catch (error) {
 
              } finally {
               sh 'docker-compose stop jar && docker-compose rm -f jar'
              }
-	}
- }
+	        }
+	 }
 }
