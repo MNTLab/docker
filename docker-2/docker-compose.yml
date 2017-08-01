@@ -5,7 +5,7 @@ services:
    context: .
    dockerfile: jar.Dockerfile
   volumes:
-      - /home/student/dockerpop/workspace/workspace/job1/build/libs/:/opt/
+      - /home/student/dockerpop/pipeline/workspace/job1/docker-2/build/libs/:/opt/
   ports: 
       - 127.0.0.1:8081:8080
     
