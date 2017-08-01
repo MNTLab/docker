@@ -1,0 +1,20 @@
+node('docker_host') {
+  stage('chekout git') {
+    git branch: "zakhar_virinsky2", url: 'https://github.com/zvirinsky/docker.git'
+  }
+
+  stage ('build custom gradle image'){
+    docker.build('docker-gradle', '-f docker-2/gradle.Dockerfile .')
+  }
+
+  stage('build spring-boot app') {
+    docker.image('docker-gradle').inside {
+      sh 'gradle -b docker-2/resources/initial/build.gradle build'
+    }
+  }
+
+  stage ('archiving artifact') {
+    sh 'cp docker-2/resources/initial/build/libs/gs-spring-boot-0.1.0.jar .'
+    archive('gs-spring-boot-0.1.0.jar')
+  }
+}

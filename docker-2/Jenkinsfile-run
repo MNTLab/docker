@@ -1,0 +1,17 @@
+node('docker_host') {
+  stage('chekout git') {
+    git branch: "zakhar_virinsky2", url: 'https://github.com/zvirinsky/docker.git'
+  }
+
+  stage('trigger build job') {
+    build job: "build-spring-boot-pipeline"
+    step ([$class: 'CopyArtifact',
+          projectName: "build-spring-boot-pipeline",
+          filter: "gs-spring-boot-0.1.0.jar"]);
+    sh "mv gs-spring-boot-0.1.0.jar docker-2/"
+  }
+
+  stage ('run spring-boot app'){
+    sh 'docker-compose -f docker-2/docker-compose.yml up -d'
+  }
+}
