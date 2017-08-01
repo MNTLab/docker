@@ -7,7 +7,7 @@ services:
   volumes:
       - /home/student/dockerpop/pipeline/workspace/job1/docker-2/build/libs/:/opt/
   ports: 
-      - 127.0.0.1:8081:8080
+      - 127.0.0.1:8085:8080
     
     
       
