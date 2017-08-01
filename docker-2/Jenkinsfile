@@ -33,7 +33,7 @@ node('docker') {
 	stage ('Sending status') {
 
          if ({$urlstatus} != 200){
-          print ('Unsuccess result'+'Response code= '+ '{$urlstatus})
+          print ('Unsuccess result'+'Response code= '+ '{$urlstatus}')
          } else{
            print ('ALL STEPS SUCCESS')
          }
