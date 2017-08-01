@@ -20,8 +20,8 @@ node('docker') {
 
 	stage ('Check'){
 	   try {
-	         sh '(curl -o /dev/null --silent --head --write-out '%{http_code}' "http://127.0.0.1:8085")'
-
+	         sh 'urlstatus=$(curl -o /dev/null --silent --head --write-out '%{http_code}' "http://127.0.0.1:8085")'
+             sh 'echo $urlstatus'
 	         } catch (error) {
 
              } finally {
