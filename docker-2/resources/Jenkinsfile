@@ -1,0 +1,40 @@
+node('docker') {
+
+ stage('Preparation (Checking out)') {
+       git branch: 'pavel_yurchuk_day2', url: 'https://github.com/PaulYurchuk/docker.git'
+         }
+
+ stage ('Building docker gradle image'){
+	  docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
+            }
+ dir('docker-2'){
+    stage ('Building code'){
+        docker.image('gradle:latest').inside {
+             sh 'gradle build'
+    	    }
+	       }
+
+	stage ('Deployment'){
+       	        sh 'docker-compose up -d'
+	            }
+
+	stage ('Check'){
+	   try {
+	         def urlstatus= sh '(curl -o /dev/null --silent --head --write-out '%{http_code}' "http://127.0.0.1:8085")'
+	         print ({$urlstatus})
+	         } catch (error) {
+
+             } finally {
+              sh 'docker-compose stop jar && docker-compose rm -f jar'
+             }
+	        }
+	stage ('Sending status') {
+
+         if ({$urlstatus} != 200){
+          print ('ERROR')
+         } else{
+           print ('SUCCESS')
+         }
+         }
+    }
+}
