@@ -21,6 +21,7 @@ node('docker') {
 	stage ('Check'){
 	   try {
 	         def urlstatus= sh '(curl -o /dev/null --silent --head --write-out '%{http_code}' "http://127.0.0.1:8085")'
+	         print ({$urlstatus})
 	         } catch (error) {
 
              } finally {
@@ -28,11 +29,11 @@ node('docker') {
              }
 	        }
 	stage ('Sending status') {
-	      sh 'echo $urlstatus'
+
          if ({$urlstatus} != 200){
-          sh 'Unsuccess result'
+          print ('Unsuccess result')
          } else{
-         sh 'ALL STEPS SUCCESS'
+           print ('ALL STEPS SUCCESS')
          }
          }
     }
