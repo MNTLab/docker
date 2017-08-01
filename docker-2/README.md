@@ -45,7 +45,7 @@ $ ansible-playbook playbook.yml
 - in the [docker-compose.yml](docker-compose.yml)
 
 ### Link Docker Host as Jenknis slave (ssh)
-<img src="resources/Screenshot from 2017-08-01 02-48-49.png">
+<img src="resources/Screenshot from 2017-08-01 02-48-49app-docker-compose.yml.png">
 
 ### Create custom gradle image
 - in the [gradle.Dockerfile](gradle.Dockerfile)
