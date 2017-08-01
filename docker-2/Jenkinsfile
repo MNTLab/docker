@@ -13,12 +13,11 @@ node('docker') {
 	stage ('Deploy jar'){
 
 	        sh 'pwd'
-	         sh 'mv docker-2/docker-compose.yml ./'
-             sh 'mv docker-2/jar.Dockerfile ./'
-            sh 'docker-compose up -d'
+	        sh 'docker-compose -f docker-2/dokcer-compose.yml up -d'
 
 	}
 	stage ('Test jar'){
+	        sleep 8
             sh 'curl  -s -IL http://127.0.0.1:8081 | grep "200"'
     	}
 	
