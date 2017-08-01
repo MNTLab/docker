@@ -1,16 +1,18 @@
 node('docker') {
     stage ('Building image'){
 	git branch: 'nikita_dolya_day2', url: 'https://github.com/bubalush/docker.git'
-    def gradle = docker.build ('gradle', '-f gradle.Dockerfile .')
+    def gradle = docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
 }
     stage ('Build app'){
-    docker.image('gradle:latest').inside {
-        sh 'gradle build'
-    	}
-	}
+    dir('docker-2'){
+        docker.image('gradle:latest').inside {
+             sh 'gradle build'
+    	    }
+	        }
+	     }
 	stage ('Deploy jar'){
 	        sh 'pwd'
-            sh 'docker-compose up -d'
+            sh 'docker-compose -f docker-2/docker-compose up -d'
     	}
 	
 	stage ('Test jar'){
