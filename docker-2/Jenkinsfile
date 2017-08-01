@@ -16,7 +16,7 @@ node('docker') {
 
 	stage ('Deployment'){
 
-	        sh 'pwd'
+	        sh 'whoami'
 	        sh 'docker-compose up -d'
 	            }
 
