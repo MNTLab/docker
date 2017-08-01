@@ -27,4 +27,5 @@ node('docker') {
               sh 'docker-compose stop jar && docker-compose rm -f jar'
              }
 	}
+ }
 }
