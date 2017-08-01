@@ -8,7 +8,7 @@ stage('Building') {
 
 stage('build spring-boot app') {
     docker.image('jenkins/gradle:1.0').inside {
-      sh 'gradle -b src/build.gradle build'
+      sh 'gradle -b initial/build.gradle build'
 }
 }
 stage('Deploying') {
