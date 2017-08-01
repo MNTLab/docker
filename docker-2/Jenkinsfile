@@ -4,17 +4,17 @@ node('docker') {
     def gradle = docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
 }
     stage ('Build app'){
-    dir('docker-2'){
+     dir('docker-2'){
         docker.image('gradle:latest').inside {
              sh 'gradle build'
     	    }
 	        }
 	     }
 	stage ('Deploy jar'){
-
+        dir('docker-2'){
 	        sh 'pwd'
 	        sh 'docker-compose up -d'
-
+            }
 	}
 	stage ('Test jar'){
 	        sleep 8
