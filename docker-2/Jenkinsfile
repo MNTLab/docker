@@ -6,11 +6,16 @@ stage('Building') {
   sh 'cp -r docker-2/initial/ ./'
 }
 
+stage ('Building docker gradle image'){
+	  docker.build ('jenkins/gradle:1.0', '-f docker-2/gradle.Dockerfile .')
+}
+
 stage('build spring-boot app') {
     docker.image('jenkins/gradle:1.0').inside {
       sh 'gradle -b initial/build.gradle build'
 }
 }
+
 stage('Deploying') {
    sh 'docker-compose up -d'
 }
