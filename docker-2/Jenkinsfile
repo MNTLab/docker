@@ -3,19 +3,21 @@ node('docker') {
 	git branch: 'nikita_dolya_day2', url: 'https://github.com/bubalush/docker.git'
     def gradle = docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
 }
+dir('docker-2'){
     stage ('Build app'){
-     dir('docker-2'){
+
         docker.image('gradle:latest').inside {
              sh 'gradle build'
     	    }
 	        }
-	     }
+
 	stage ('Deploy jar'){
-        dir('docker-2'){
+
 	        sh 'pwd'
 	        sh 'docker-compose up -d'
-            }
+
 	}
+  }
 	stage ('Test jar'){
 	        sleep 8
             sh 'curl  -s -IL http://127.0.0.1:8081 | grep "200"'
