@@ -11,10 +11,12 @@ node('docker') {
 	        }
 	     }
 	stage ('Deploy jar'){
-	dir('docker-2') {
+
 	        sh 'pwd'
+	         sh 'mv docker-2/docker-compose.yml ./'
+             sh 'mv docker-2/jar.Dockerfile ./'
             sh 'docker-compose up -d'
-    	}
+
 	}
 	stage ('Test jar'){
             sh 'curl  -s -IL http://127.0.0.1:8081 | grep "200"'
