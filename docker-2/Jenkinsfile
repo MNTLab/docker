@@ -3,7 +3,7 @@ node('epbyminw3088.minsk.epam.com'){
 stage('Building') {
   sh 'rm -rf ./*'
   git branch: 'artsiom_aksionkin-2', url: 'https://github.com/artem-aksenkin/docker.git'
-  sh 'cp -r docker-2/src/ ./'
+  sh 'cp -r docker-2/initial/ ./'
 }
 
 stage('build spring-boot app') {
