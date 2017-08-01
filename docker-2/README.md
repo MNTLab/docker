@@ -45,15 +45,15 @@ Task Report Notes
 
 * Build and run containers with Dockerfiles:
 
-<img src="resources/1.png">
+<img src="pictures/1.png">
 
-<img src="resources/2.png">
+<img src="pictures/2.png">
 
-<img src="resources/3.png">
+<img src="pictures/3.png">
 
-<img src="resources/4.png">
+<img src="pictures/4.png">
 
-<img src="resources/5.png">
+<img src="pictures/5.png">
 
 # Used Scripts:
 
