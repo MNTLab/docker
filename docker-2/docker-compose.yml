@@ -1,0 +1,8 @@
+version: '2'
+services:
+  run:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    expose: ["8080"]    
+    ports: ["8080:8081"]
