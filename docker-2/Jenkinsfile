@@ -1,4 +1,4 @@
-node('host') {
+node('Slave-host') {
 
   stage('Check out code') {
       git branch: 'docker-2', url: 'https://github.com/anton-maslakou/docker.git'
