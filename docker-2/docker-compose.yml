@@ -1,6 +1,6 @@
 version: '2'
 services:
-  run:
+  app:
     build:
       context: .
       dockerfile: app.Dockerfile
