@@ -39,3 +39,27 @@ $ ansible-playbook playbook.yml
 
 ### Dockerized Zabbix
 [Solution](https://www.zabbix.org/wiki/Dockerized_Zabbix)
+
+# Result:
+1. Create custom ansible (v2.2.1) image
+2. Launch Jenkins from [official image](https://hub.docker.com/_/jenkins/)
+
+<img src="pictures/Screenshot from 2017-07-31 19-08-43.png">
+
+3. Link Docker Host as Jenknis slave (ssh)
+
+<img src="pictures/Screen Shot 2017-08-01 at 23.18.55.png">
+
+<img src="pictures/Screen Shot 2017-08-01 at 23.20.55.png">
+
+4. Create custom gradle [image](https://github.com/PaulYurchuk/docker/blob/pavel_yurchuk_day2/docker-2/gradle.Dockerfile)
+
+5. Configure a job to build [spring-boot application](https://spring.io/guides/gs/spring-boot/) using gradle [image](https://github.com/PaulYurchuk/docker/blob/pavel_yurchuk_day2/docker-2/build.gradle) buit in 3
+
+<img src="pictures/Screenshot from 2017-08-02 09-05-51.png">
+
+<img src="pictures/Screenshot from 2017-08-02 09-05-39.png">
+
+6. Configure a job to run just built Spring Boot app with [docker-compose](https://github.com/bubalush/docker/blob/nikita_dolya_day2/docker-2/docker-compose.yml),[deploy](https://github.com/PaulYurchuk/docker/blob/pavel_yurchuk_day2/docker-2/jar.Dockerfile)
+
+<img src="pictures/Screenshot from 2017-08-02 09-05-59.png">
