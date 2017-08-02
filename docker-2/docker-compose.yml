@@ -5,6 +5,6 @@ services:
    context: .
    dockerfile: app.Dockerfile
   volumes:
-      - /home/student/dockerpop/pipeline/workspace/job1/docker-2/build/libs/:/opt/
+      - initial/build/libs/:/opt/
   ports: 
       - 8081:8080
