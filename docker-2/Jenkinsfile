@@ -14,7 +14,7 @@ node('docker_host') {
   }
 
   stage ('Deploying') {
-    sh 'docker-compose -d -f docker-2/docker-compose.yml up'
+    sh 'docker-compose -f docker-2/docker-compose.yml up'
   }
 
   stage ('Check') {
