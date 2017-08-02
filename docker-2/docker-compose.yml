@@ -1,0 +1,10 @@
+version: '2'
+services:
+ jar:
+  build:
+   context: .
+   dockerfile: app.Dockerfile
+  volumes:
+      - ./initial/build/libs/:/opt/
+  ports: 
+      - 8081:8080
