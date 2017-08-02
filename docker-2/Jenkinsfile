@@ -5,7 +5,7 @@ node('Slave-host') {
   }
 
   stage ('Build gradle container'){
-	   docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
+	   docker.build ('gradle', '-f d/Users/dart/workspace/Docker/task2/slave-jenkins/workspace/pipeline-job/docker-2/gradle.Dockerfile .')
   }
 
   dir('docker-2'){
