@@ -3,7 +3,7 @@
 2. Launch Jenkins from [official image](https://hub.docker.com/_/jenkins/)
 3. Link Docker Host as Jenknis slave (ssh)
 
-<img src="2.png">
+<img src="1.png">
 
 4. Create custom gradle image 
 
@@ -21,7 +21,7 @@ CMD gradle -v
 ```
 5. Configure a job to build [spring-boot application](https://spring.io/guides/gs/spring-boot/) using gradle image buit in 3
 
-<img src="1.png">
+<img src="2.png">
 
 [Jenkinsfile:](Jenkinsfile)
 
