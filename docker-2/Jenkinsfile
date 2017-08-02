@@ -1,7 +1,7 @@
 node('docker') {
 
  stage('Preparation (Checking out)') {
-       git branch: 'pavel_yurchuk2', url: 'https://github.com/PaulYurchuk/docker.git'
+       git branch: 'pavel_yurchuk_day2', url: 'https://github.com/PaulYurchuk/docker.git'
          }
 
  stage ('Building docker gradle image'){
@@ -20,7 +20,7 @@ node('docker') {
 
 	stage ('Check'){
 
-	         sh 'sleep 8 && curl -IL http://127.0.0.1:8085'
+	         sh 'sleep 8 && curl -IL http://127.17.0.2:8080'
              sh 'docker-compose stop jar && docker-compose rm -f jar'
              }
 
