@@ -16,7 +16,7 @@
 
 <img src="pict/4.png">
 
-6. Configure a job to run just built Spring Boot app with docker-compose
+6. Configure a job to run just built Spring Boot app with([docker-compose](docker-compose.yml))
 
 
 <img src="pict/5.png">
