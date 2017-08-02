@@ -4,8 +4,6 @@ MTN.*NIX.11 Automated Environment Configuration Management
 ***Student***: Anton Maslakou
 
 
-## Watch screenshots in https://github.com/anton-maslakou/docker/blob/docker1/docker-1/report-Docker1.pdf
-
 Home Task
 ---
 
@@ -39,6 +37,52 @@ Using base docker image ***sbeliakou/centos:7.2***
 4. Create PR with description of reported task
 6. All needed resources (if they are) must be placed into ```/resources``` folder
 
-Task Report Notes
----
-*All stuff must be provided in this section
+## docker-compose.yml
+```
+version: '2'
+services:
+ my-app:
+    build:
+      context: .
+      dockerfile: App/application.Dockerfile
+    command: sleep infinity
+ my-tomcat:
+    build:
+      context: .
+      dockerfile: Tomcat/tomcat.Dockerfile
+    command: /usr/libexec/tomcat/server start
+    depends_on: [ "my-app" ]
+    volumes_from: [ "my-app" ]
+ my-nginx:
+    build:
+      context: .
+      dockerfile: nginx/web.Dockerfile
+    command: ["nginx", "-g", "daemon off;"]
+    depends_on: [ "my-tomcat" ]
+    expose: [ "80" ]
+    ports: [ "127.0.0.1:80:80" ]
+```
+
+## tomcat.Dockerfile
+```
+FROM sbeliakou/centos:7.2
+RUN rpm --rebuilddb; yum install -y tomcat tomcat-webapps
+CMD /usr/libexec/tomcat/server start
+```
+
+## web.Dockerfile
+```
+FROM sbeliakou/centos:7.2
+RUN yum -y install nginx
+RUN sed -i '/location \/ {/s//location \/ { proxy_pass http:\/\/tomcat:8080;/'  /etc/nginx/nginx.conf
+EXPOSE 80
+CMD nginx -g 'daemon off;'
+```
+
+## application.Dockerfile
+```
+FROM sbeliakou/centos:7.2
+VOLUME /var/lib/tomcat/webapps/
+ADD sample.war /var/lib/tomcat/webapps/
+CMD sleep infinity
+```
