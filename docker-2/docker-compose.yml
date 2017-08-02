@@ -6,4 +6,3 @@ services:
       dockerfile: app.Dockerfile
     volumes:
       - /home/student/workspace/docker/workspace/Docker-2/docker-2/initial/build/libs/:/opt/    
-    ports: ["8081:8081"]
