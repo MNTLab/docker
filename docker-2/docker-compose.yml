@@ -4,5 +4,6 @@ services:
     build:
       context: .
       dockerfile: app.Dockerfile
-    expose: ["8081"]    
-    ports: ["8081:8081"]
+    volumes:
+      - /home/student/workspace/docker/workspace/Docker-2/docker-2/initial/build/libs/:/opt/    
+    ports: ["8081:8080"]
