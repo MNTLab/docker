@@ -5,7 +5,6 @@ node('Slave-host') {
   }
 
   stage ('Build gradle container'){
-	   sh 'trc'
 	   docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
   }
 
