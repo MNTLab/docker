@@ -1,5 +1,5 @@
 node('docker_host') {
-  stage('Checkout) {
+  stage('Checkout') {
     git branch: "marija_demenkova2", url: 'https://github.com/marijademenkova/docker.git'
   }
 
