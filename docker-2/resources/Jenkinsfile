@@ -1,0 +1,28 @@
+node('host') {
+    stage('Cleaning workspace') {
+        deleteDir()
+    }
+    stage('Checkout from Spring-git') {
+        git 'https://github.com/spring-guides/gs-spring-boot.git'
+    }
+    stage('Prepare build environment') {
+        docker.image('gradle').inside {
+            sh 'gradle -b initial/build.gradle build'
+        }
+    }
+    stage('Prepare environment to run app') {
+        sh 'mkdir spring'
+        sh 'wget -N  https://raw.githubusercontent.com/VadzimTarasiuk/docker/vadzim_tarasiuk_day2/docker-2/resources/spring/docker-compose.yml'
+        sh 'wget -N -P spring/ https://raw.githubusercontent.com/VadzimTarasiuk/docker/vadzim_tarasiuk_day2/docker-2/resources/spring/spring.Dockerfile'
+    }
+    stage('Run application container') {
+        sh 'docker-compose up -d' 
+    }
+    stage('Check if Spring is deployed and accessible') {
+        sh 'sleep 5s'
+        sh 'curl -IL http://127.0.0.1:8081' 
+    }
+    stage('Clean up containers') {
+        sh 'docker-compose stop && docker-compose rm -f'
+    }
+}
