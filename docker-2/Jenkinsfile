@@ -9,7 +9,7 @@ node('docker_host') {
 
   stage('Building') {
     docker.image('gradle').inside {
-      sh 'gradle -b docker-2/initial/gradlew build'
+      sh 'gradle -b docker-2/initial/build.gradle build'
     }
   }
 
