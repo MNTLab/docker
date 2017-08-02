@@ -1,0 +1,8 @@
+version: '2'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    volumes:
+      - /home/student/workspace/docker/workspace/Docker-2/docker-2/initial/build/libs/:/opt/    

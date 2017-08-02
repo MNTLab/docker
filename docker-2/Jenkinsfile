@@ -1,0 +1,19 @@
+node('docker_host') {
+  stage('Checkout') {
+    git branch: "marija_demenkova2", url: 'https://github.com/marijademenkova/docker.git'
+  }
+
+  stage ('Building gradle.Dockerfile'){
+    docker.build('gradle', '-f docker-2/gradle.Dockerfile .')
+  }
+
+  stage('Building') {
+    docker.image('gradle').inside {
+      sh 'gradle -b docker-2/initial/build.gradle build'
+    }
+  }
+
+  stage ('Deploying') {
+    sh 'docker-compose -f docker-2/docker-compose.yml up'
+  }
+}
