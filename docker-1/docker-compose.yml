@@ -1,0 +1,22 @@
+version: '2'
+services:
+ my-app:
+    build:
+      context: .
+      dockerfile: App/application.Dockerfile
+    command: sleep infinity
+ my-tomcat:
+    build:
+      context: .
+      dockerfile: Tomcat/tomcat.Dockerfile
+    command: /usr/libexec/tomcat/server start
+    depends_on: [ "my-app" ]
+    volumes_from: [ "my-app" ]
+ my-nginx:
+    build:
+      context: .
+      dockerfile: nginx/web.Dockerfile
+    command: ["nginx", "-g", "daemon off;"]
+    depends_on: [ "my-tomcat" ]
+    expose: [ "80" ]
+    ports: [ "127.0.0.1:80:80" ]
