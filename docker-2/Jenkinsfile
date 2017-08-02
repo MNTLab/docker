@@ -1,0 +1,18 @@
+node('host') {
+	stage('Git') {
+		git branch: 'vitali_ulantsau_day2', url: 'https://github.com/SVLay/docker.git'
+	}
+	stage ('Build gradle') {
+		docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
+	}
+	dir('docker-2') {
+		stage ('Building code') {
+			docker.image('gradle:latest').inside {
+				sh 'gradle build'
+			}
+		}
+		stage ('Docker-compose') {
+			sh '/home/student/.pyenv/shims/docker-compose up -d'
+		}
+	}
+ }

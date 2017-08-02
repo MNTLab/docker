@@ -7,35 +7,14 @@
 6. Configure a job to run just built Spring Boot app with docker-compose
 
 
+- Host is connected as slave(master executors number is set to 0, to force running all jobs on the host node)
+<img src="docker-2/pictures/Screenshot from 2017-08-02 12-53-47.png">
 
-### Example of usage docker to isolate toolset with its dependencies:
+- Job is running succesfully
+<img src="docker-2/pictures/Screenshot from 2017-08-02 12-42-27.png">
 
-```
-# what version?
-$ docker run --rm sbeliakou/ansible:2.2.1 ansible --version
+- Docker containers status
+<img src="docker-2/pictures/Screenshot from 2017-08-02 12-43-07.png">
 
-# run playbook from current dir
-$ alias ansible-playbook='docker run --rm -v $(pwd):$(pwd) -w $(pwd) sbeliakou/ansible:2.2.1 ansible-playbook -vv'
-$ ansible-playbook playbook.yml
-```
-
-### Using Docker in Jenkinsfile
-[Jenkins Docker Pipeline plugin](https://go.cloudbees.com/docs/cloudbees-documentation/cje-user-guide/index.html#docker-workflow)
-
-```
-  stage('Run Tests') {
-    try {
-      dir('webapp') {
-        sh "mvn test"
-        docker.build("sbeliakou/my_container:${env.BUILD_NUMBER}").push()
-      }
-    } catch (error) {
-
-    } finally {
-      junit '**/target/surefire-reports/*.xml'
-    }
-  }
-```
-
-### Dockerized Zabbix
-[Solution](https://www.zabbix.org/wiki/Dockerized_Zabbix)
+- Spring boot app is running
+<img src="docker-2/pictures/Screenshot from 2017-08-02 09-21-12.png">
