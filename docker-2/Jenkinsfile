@@ -16,7 +16,4 @@ node('docker_host') {
   stage ('Deploying') {
     sh 'docker-compose -f docker-2/docker-compose.yml up'
   }
-  stage('Checking') {
-  sh 'sleep 10 && curl -LI http://127.0.0.1:8080'
-}
 }
