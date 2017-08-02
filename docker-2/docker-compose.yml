@@ -5,6 +5,6 @@ services:
    context: .
    dockerfile: app.Dockerfile
   volumes:
-      - initial/build/libs/:/opt/
+      - ./initial/build/libs/:/opt/
   ports: 
       - 8081:8080
