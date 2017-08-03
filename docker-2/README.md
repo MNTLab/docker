@@ -60,6 +60,6 @@ $ ansible-playbook playbook.yml
 
 <img src="pictures/Screenshot from 2017-08-02 09-05-39.png">
 
-6. Configure a job to run just built Spring Boot app with [docker-compose](https://github.com/bubalush/docker/blob/nikita_dolya_day2/docker-2/docker-compose.yml),[deploy](https://github.com/PaulYurchuk/docker/blob/pavel_yurchuk_day2/docker-2/jar.Dockerfile)
+6. Configure a job to run just built Spring Boot app with [docker-compose](https://github.com/PaulYurchuk/docker/blob/pavel_yurchuk_day2/docker-2/docker-compose.yml),[deploy](https://github.com/PaulYurchuk/docker/blob/pavel_yurchuk_day2/docker-2/jar.Dockerfile)
 
 <img src="pictures/Screenshot from 2017-08-02 09-05-59.png">
