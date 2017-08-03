@@ -1,0 +1,21 @@
+node('Slave-host') {
+
+  stage('Check out code') {
+      git branch: 'docker-2', url: 'https://github.com/anton-maslakou/docker.git'
+  }
+
+  stage ('Build gradle container'){
+	   docker.build ('gradle', '-f docker-2/gradle.Dockerfile .')
+  }
+
+  dir('docker-2'){
+    stage ('Build code'){
+        docker.image('gradle:latest').inside {
+             sh 'gradle -b initial/build.gradle build' 
+    	  }
+	  }
+  	stage ('Deployment'){
+        sh 'docker-compose up -d'
+    }
+	}
+ }
