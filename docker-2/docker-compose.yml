@@ -7,4 +7,4 @@ services:
   volumes:
       - /home/student/jenkins/pipeline/workspace/spring-boot\ application/docker-2/build/libs/:/opt/
   ports: 
-      - 127.17.0.2:8080:8080
+      - 127.0.0.1:8085
