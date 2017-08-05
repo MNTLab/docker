@@ -1,0 +1,11 @@
+version: '2'
+services:
+ jenkins:
+    image: jenkins/jenkins:2.60.2
+    volumes:
+      - /home/student/dockerpop/jenkins:/var/jenkins_home:rw
+    ports: 
+      - 127.0.0.1:80:8080
+      
+
+ 
