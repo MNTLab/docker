@@ -1,12 +1,26 @@
 # Task:
 1. Create custom ansible (v2.2.1) image
-2. Launch Jenkins from [official image](https://hub.docker.com/_/jenkins/)
+2. Launch Jenkins from [official image](https://github.com/jenkinsci/docker)
+
+-docker run -p 8080:8080 -p 50000:50000 -d -v /home/student/PycharmProjects/docker/docker-2/FOR_JENKINS:/var/jenkins_home jenkins/jenkins:2.60.2 
+
+<img src="resources/Screenshot from 2017-08-05 13-10-55.png">
+
 3. Link Docker Host as Jenknis slave (ssh)
+
+<img src="resources/Screenshot from 2017-08-05 13-13-54.png">
+
 4. Create custom gradle image
+
+<img src="resources/Screenshot from 2017-08-05 13-15-02.png">
+
 5. Configure a job to build [spring-boot application](https://spring.io/guides/gs/spring-boot/) using gradle image buit in 3
+
+<img src="resources/Screenshot from 2017-08-05 13-15-57.png">
+
 6. Configure a job to run just built Spring Boot app with docker-compose
 
-
+<img src="resources/Screenshot from 2017-08-05 13-17-27.png">
 
 ### Example of usage docker to isolate toolset with its dependencies:
 

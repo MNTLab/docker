@@ -1,0 +1,13 @@
+---
+version: '2'
+services:
+   spring:
+    build:
+      context: .
+      dockerfile: spring.Dockerfile
+    volumes:
+      - /home/student/PycharmProjects/docker/docker-2/jenkins_slave/workspace/docker-test/initial/build/libs/:/opt/
+    ports:
+      - 8081:8080
+
+
