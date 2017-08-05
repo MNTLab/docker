@@ -39,3 +39,28 @@ $ ansible-playbook playbook.yml
 
 ### Dockerized Zabbix
 [Solution](https://www.zabbix.org/wiki/Dockerized_Zabbix)
+
+Task Report Notes
+---
+
+* Build and run containers with Dockerfiles:
+
+<img src="pictures/1.png">
+
+<img src="pictures/2.png">
+
+<img src="pictures/3.png">
+
+<img src="pictures/4.png">
+
+<img src="pictures/5.png">
+
+# Used Scripts:
+
+[Jenkinsfile](Jenkinsfile) - Pipeline script
+
+[jar.Dockerfile](jar.Dockerfile) - Docker container for deployment
+
+[gradle.Dockerfile](gradle.Dockerfile) - Docker container Gradle 
+
+[docker-compose.yml](docker-compose.yml) - Docker container Gradle for build
